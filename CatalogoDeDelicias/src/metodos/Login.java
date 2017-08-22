@@ -16,34 +16,41 @@ import java.util.Scanner;
  * @author Ramirez D
  */
 public class Login {
-    
-    public boolean login(String usuario, String pass, LinkedList<Usuario> listaU){
-        for(Usuario usu: listaU){
-            if(usu.getNombre().equals(usuario) && usu.getContraseña().equals(pass)) return true;
+
+    public static boolean login(String usuario, String pass, LinkedList<Usuario> listaU) {
+        for (Usuario usu : listaU) {
+            if (usu.getNombre().equals(usuario) && usu.getContraseña().equals(pass)) {
+                return true;
+            }
         }
         return false;
     }
-    
-    public Usuario buscarUsuario(String nombre, LinkedList<Usuario> listaU){
-        for(Usuario usu: listaU){
-            if(usu.getNombre().equals(nombre)) return usu;
+
+    public static Usuario buscarUsuario(String nombre, LinkedList<Usuario> listaU) {
+        for (Usuario usu : listaU) {
+            if (usu.getNombre().equals(nombre)) {
+                return usu;
+            }
         }
         return null;
     }
-    
-    public void iniciarSesion() throws IOException{
+
+    public void iniciarSesion() throws IOException {
         R_W rw = new R_W();
         LinkedList<Usuario> usuarios = rw.devolverUsuarios();
         System.out.println("..Iniciando sesion..");
         Scanner sc = new Scanner(System.in);
-        while(true){
+        while (true) {
             System.out.println("Ingrese su usuario por favor: ");
             String usuario = sc.nextLine();
             System.out.println("Ingrese su contrasñea por favor: ");
             String pass = sc.nextLine();
-            if(!login(usuario, pass, usuarios)) break;
-            else System.out.println("Error al iniciar sesion, datos invalidos");
+            if (!login(usuario, pass, usuarios)) {
+                break;
+            } else {
+                System.out.println("Error al iniciar sesion, datos invalidos");
+            }
         }
     }
-    
+
 }

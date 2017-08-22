@@ -5,28 +5,28 @@ package tdas;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Ramirez D
  */
 public class Usuario {
+
     private String nombre;
     private String contraseña;
     private String restaurante;
     private String tipo;
-    
-    public Usuario(String nom, String pass, String tip, String rest){
+
+    public Usuario(String nom, String pass, String tip, String rest) {
         nombre = nom;
         contraseña = pass;
         tipo = tip;
         restaurante = rest;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String str = "Nombre: " + nombre + "\nContraseña: " + contraseña + "\nTipo: " + tipo;
-        if(!"none".equals(this.restaurante)){
+        if (!"none".equals(this.restaurante)) {
             str += "\nRestaurante: " + restaurante;
         }
         return str;
@@ -63,6 +63,5 @@ public class Usuario {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    
+
 }
