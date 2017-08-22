@@ -45,7 +45,7 @@ public class R_W {
     public void guardarUsuario(Usuario usuario) throws IOException {
         LinkedList usuarios = devolverUsuarios();
         usuarios.add(usuario);
-        CSVWriter csvOutput = new CSVWriter(new FileWriter("usuarios.csv", true), ',', '"', "\r\n");
+        CSVWriter csvOutput = new CSVWriter(new FileWriter("src/resources/usuarios.csv", true), ';', '"', "\r\n");
 
         csvOutput.writeAll(usuarios, false);
         csvOutput.close();
@@ -54,7 +54,7 @@ public class R_W {
     public LinkedList devolverPlatillos() throws IOException {
         LinkedList<Platillo> platillos = new LinkedList<>();
         try {
-            CsvReader platillos_import = new CsvReader("platillos.csv");
+            CsvReader platillos_import = new CsvReader("src/resources/platillos.csv");
             platillos_import.readHeaders();
 
             while (platillos_import.readRecord()) {
@@ -78,7 +78,7 @@ public class R_W {
     public void guardarPlatillo(Platillo platillo) throws IOException {
         LinkedList platillos = devolverPlatillos();
         platillos.add(platillo);
-        CSVWriter csvOutput = new CSVWriter(new FileWriter("platillos.csv", true), ',', '"', "\r\n");
+        CSVWriter csvOutput = new CSVWriter(new FileWriter("src/resources/platillos.csv", true), ';', '"', "\r\n");
 
         csvOutput.writeAll(platillos, false);
         csvOutput.close();
