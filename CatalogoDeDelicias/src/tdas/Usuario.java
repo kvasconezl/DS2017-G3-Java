@@ -23,6 +23,10 @@ public class Usuario {
         restaurante = rest;
     }
 
+    public Usuario() {
+
+    }
+
     @Override
     public String toString() {
         String str = "Nombre: " + nombre + "\nContraseña: " + contraseña + "\nTipo: " + tipo;

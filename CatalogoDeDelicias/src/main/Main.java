@@ -11,12 +11,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tdas.Usuario;
 
 /**
  *
  * @author Ramirez D
  */
 public class Main extends Application {
+
+    private static Usuario ACTUAL_USER;
+
+    public static Usuario getACTUAL_USER() {
+        return ACTUAL_USER;
+    }
+
+    public static void setACTUAL_USER(Usuario ACTUAL_USER) {
+        Main.ACTUAL_USER = ACTUAL_USER;
+    }
 
     @Override
     public void start(Stage stage) throws IOException {

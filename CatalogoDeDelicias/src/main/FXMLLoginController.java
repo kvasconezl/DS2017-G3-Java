@@ -45,6 +45,9 @@ public class FXMLLoginController implements Initializable {
             status.setText("Usuario o contraseña incorrectos.");
         } else {
             Usuario user = Login.buscarUsuario(username.getText(), usuarios);
+            if (user != null) {
+                Main.setACTUAL_USER(user);
+            }
             if (user.getTipo().equals("admin")) {
                 this.changeWindow("admin");
             } else if (user.getTipo().equals("staff")) {
@@ -56,7 +59,6 @@ public class FXMLLoginController implements Initializable {
     }
 
     public void changeWindow(String tipo) throws IOException {
-        ((Node) (status)).getScene().getWindow().hide();
         String fxml = (tipo.equals("admin")) ? "FXMLAdminMenu.fxml"
                 : ((tipo.equals("staff")) ? "FXMLStaffMenu.fxml" : "FXMLUserMenu.fxml");
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
@@ -65,6 +67,7 @@ public class FXMLLoginController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Catálogo de Delicias");
         stage.show();
+        ((Node) (status)).getScene().getWindow().hide();
     }
 
     /**

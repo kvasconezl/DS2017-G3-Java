@@ -7,7 +7,10 @@ package main;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import org.apache.commons.lang3.text.WordUtils;
 
 /**
  * FXML Controller class
@@ -16,12 +19,28 @@ import javafx.fxml.Initializable;
  */
 public class FXMLAdminMenuController implements Initializable {
 
+    @FXML
+    private Label nombre;
+    @FXML
+    private Label restaurante;
+    @FXML
+    private Label privilegios;
+    private String fxml;
+
+    public void mostrarUsuario() {
+        String name = WordUtils.capitalizeFully(Main.getACTUAL_USER().getNombre());
+        String rest = WordUtils.capitalizeFully(Main.getACTUAL_USER().getRestaurante());
+        nombre.setText(name);
+        restaurante.setText(rest);
+        privilegios.setText(Main.getACTUAL_USER().getTipo());
+    }
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.mostrarUsuario();
     }
 
 }

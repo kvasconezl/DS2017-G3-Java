@@ -25,7 +25,6 @@ public class R_W {
         LinkedList<Usuario> usuarios = new LinkedList<>();
         try {
             CsvReader usuarios_import = new CsvReader("src/resources/usuarios.csv", ';');
-            usuarios_import.readHeaders();
 
             while (usuarios_import.readRecord()) {
                 usuarios.add(new Usuario(usuarios_import.get(0), usuarios_import.get(1),
@@ -55,7 +54,6 @@ public class R_W {
         LinkedList<Platillo> platillos = new LinkedList<>();
         try {
             CsvReader platillos_import = new CsvReader("src/resources/platillos.csv");
-            platillos_import.readHeaders();
 
             while (platillos_import.readRecord()) {
                 LinkedList<String> img = new LinkedList<>();
