@@ -23,8 +23,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import metodos.Login;
 import tdas.Usuario;
-import static metodos.Login.login;
-import static metodos.Login.buscarUsuario;
 
 /**
  * FXML Controller class

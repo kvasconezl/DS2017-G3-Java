@@ -14,7 +14,7 @@ public class Usuario {
     private String nombre;
     private String contraseña;
     private String restaurante;
-    private String tipo;
+    private String tipo; //admin, staff, cliente
 
     public Usuario(String nom, String pass, String tip, String rest) {
         nombre = nom;

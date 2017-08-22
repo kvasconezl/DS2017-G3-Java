@@ -60,7 +60,9 @@ public class R_W {
             while (platillos_import.readRecord()) {
                 LinkedList<String> img = new LinkedList<>();
                 img.add(platillos_import.get(4));
-                platillos.add(new Platillo(platillos_import.get(0), platillos_import.get(1), platillos_import.get(2), platillos_import.get(3), img, platillos_import.get(5), platillos_import.get(6), platillos_import.get(7)));
+                platillos.add(new Platillo(platillos_import.get(0), platillos_import.get(1), platillos_import.get(2),
+                        platillos_import.get(3), img, platillos_import.get(5),
+                        platillos_import.get(6), platillos_import.get(7)));
             }
 
             platillos_import.close();
