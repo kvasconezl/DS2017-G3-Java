@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="827.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.FXMLAdminMenuController">
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="827.0" style="-fx-background-color: white;" stylesheets="@../resources/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.FXMLAdminMenuController">
    <children>
       <VBox alignment="CENTER" prefHeight="571.0" prefWidth="285.0" spacing="10.0">
          <children>
@@ -49,10 +49,11 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="314.0" prefHeight="571.0" prefWidth="513.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button fx:id="addRest" mnemonicParsing="false" onAction="#changeWindow" styleClass="primary" text="Agregar Restaurante" />
+            <Button fx:id="listRest" mnemonicParsing="false" onAction="#changeWindow" styleClass="primary" text="Listar Restaurantes" />
+            <Button fx:id="addUser" mnemonicParsing="false" onAction="#changeWindow" styleClass="primary" text="Agregar Usuario" />
+            <Button fx:id="addStaff" mnemonicParsing="false" onAction="#changeWindow" styleClass="primary" text="Añadir Asistente a Restaurante" />
+            <Button fx:id="salir" mnemonicParsing="false" onAction="#changeWindow" styleClass="danger" text="Salir" />
          </children>
       </VBox>
    </children>
